@@ -1,0 +1,51 @@
+<!--template.wxml-->
+<template name="menuItem" data="{{...permissionList}}">
+  <view class="page-bottom">
+    <view class="page-content">
+      <!--  示例 start -->
+      <!--       
+     <view class="wc">
+        <navigator url="../one/index" hover-class="navigator-hover">首页</navigator>
+      </view>
+      <view class="wc">
+
+        <navigator url="../two/index" hover-class="navigator-hover">第二个菜单（缩放）</navigator>
+      </view>
+      <view class="wc">
+        <navigator url="../three/index" hover-class="navigator-hover">第三个菜单（拖动）</navigator>
+      </view>
+      <view class="wc">
+        <navigator url="../four/index" hover-class="navigator-hover">第四个菜单</navigator>
+      </view> 
+     -->
+      <!--  示例 end -->
+
+      <!-- 后台遍历数据 start -->
+
+      <view wx:for="{{permissionList}}" class="wc">
+        <view class="li" data-index="{{index}}" bindtap='changeToggle'>
+          <view class="left">
+            <image src="../../../../../images/shouye.png"></image>{{item.name}}</view>
+          <view class="right" wx:if="{{item.unflod}}">
+            <image src="../../../../../images/xiangxia2.png"></image>
+          </view>
+          <view class="right" wx:if="{{!item.unflod}}">
+            <image src="../../../../../images/xiangyou1.png"></image>
+          </view>
+
+        </view>
+        <view hidden="{{!item.unflod}}">
+          <block wx:for="{{item.list}}" wx:for-index="idx" wx:for-item="list">
+            <navigator url="{{list.url}}" class="li bg-gray">
+              {{list.name}}
+            </navigator>
+          </block>
+        </view>
+      </view>
+      
+      <!-- 后台遍历数据 end -->
+
+    </view>
+  </view>
+
+</template>

@@ -1,0 +1,2 @@
+/* page/one/index.wxss */
+@import "../template/menu/menu.wxss"

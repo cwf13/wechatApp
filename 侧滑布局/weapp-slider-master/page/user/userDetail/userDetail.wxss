@@ -1,0 +1,56 @@
+.group {
+  display: block;
+  width: 100%;
+}
+
+.group-header {
+  line-height: 70rpx;
+  display: flex;
+  padding: 0 20rpx;
+  background: #f9f9f9;
+}
+
+.group-body {
+  background: #fff;
+  border-top: 1rpx solid #ddd;
+  border-bottom: 1rpx solid #ddd;
+}
+
+.group-body .input-list {
+  margin: 0;
+  border: none;
+}
+
+.img-upload {
+  padding: 20rpx;
+  font-size: 0;
+  overflow: hidden;
+}
+
+.img-upload .img-item, .img-upload .img-add {
+  width: 100rpx;
+  height: 100rpx;
+  float: left;
+  margin: 10rpx;
+  border: 1rpx solid transparent;
+}
+
+.img-upload .img-add {
+  border: 1rpx dashed #ddd;
+  background: url(../../images/add.png) no-repeat 50% 50% / 70% auto;
+}
+
+.img-upload .img-item image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.img-upload .img-item {
+  position: relative;
+}
+
+.img-upload .img-item icon {
+  position: absolute;
+  right: -12rpx;
+  top: -12rpx;
+}

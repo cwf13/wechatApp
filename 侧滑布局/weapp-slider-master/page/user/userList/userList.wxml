@@ -1,0 +1,154 @@
+<!-- <view class="tabTit box">
+  <view class="flex1{{!tab[index]?' active':''}}" wx:for="{{tabTxt}}" wx:key="type" data-index="{{index}}" bindtap="filterTab">
+    <text>{{item}}</text>
+    <image src="../../../images/xiangxia2.png"></image>
+  </view>
+</view>
+
+<view class="tabLayer" hidden="{{tab[0]}}">
+  <text class="{{pinpai_id==0?'active':''}}" data-id="0" data-index="0" data-txt="品牌" bindtap="filter">不限</text>
+  <text class="{{pinpai_id==item.id?'active':''}}" wx:for="{{pinpaiList}}" wx:key="pp" wx:for-item="item" data-id="{{item.id}}" data-index="0" data-txt="{{item.title}}" bindtap="filter">{{item.title}}</text>
+</view>
+<view class="tabLayer" hidden="{{tab[1]}}">
+  <text class="{{jiage_id==0?'active':''}}" data-id="0" data-index="1" data-txt="价格" bindtap="filter">不限</text>
+  <text class="{{jiage_id==1?'active':''}}" data-id="1" data-index="1" data-txt="58-88" bindtap="filter">58-88</text>
+  <text class="{{jiage_id==2?'active':''}}" data-id="2" data-index="1" data-txt="88-108" bindtap="filter">88-108</text>
+  <text class="{{jiage_id==3?'active':''}}" data-id="3" data-index="1" data-txt="108-188" bindtap="filter">108-188</text>
+</view>
+<view class="tabLayer" hidden="{{tab[2]}}">
+  <text class="{{xiaoliang_id==0?'active':''}}" data-id="0" data-index="2" data-txt="销量" bindtap="filter">不限</text>
+  <text class="{{xiaoliang_id==1?'active':''}}" data-id="1" data-index="2" data-txt="从高到低" bindtap="filter">从高到低</text>
+  <text class="{{xiaoliang_id==2?'active':''}}" data-id="2" data-index="2" data-txt="从低到高" bindtap="filter">从低到高</text>
+</view> -->
+
+
+<!-- 排序 筛选  start -->
+<view class="filter-flex">
+  <view class="filter-tab">
+    <text bindtap="setFilterPanel" data-findex="1" class="{{showfilterindex==1?'active':''}}">排序</text>
+    <text bindtap="setFilterPanel" data-findex="2" class="{{showfilterindex==2?'active':''}}">筛选</text>
+  </view>
+  <view class="filter-content" wx:if="{{showfilter}}">
+    <view class="filter-panel filter-sort" wx:if="{{showfilterindex==1}}">
+      <view wx:for="{{filterdata.sort}}" wx:key="{{item.id}}" bindtap="setSort" data-sortindex="{{index}}" data-sortid="{{item.id}}" class="{{sortindex==index?'active':''}}">{{item.title}}</view>
+    </view>
+    <view class="filter-panel filter-multiple" wx:if="{{showfilterindex==2}}">
+      <view class="group">
+        <view class="group-header">会议时间</view>
+        <view class="group-body">
+          <view class="input-list">
+            <view class="input-item">
+              <text class="input-item-label">开始时间</text>
+              <view class="input-item-content">
+                <input type="time" placeholder="" bindinput="inputStartTime"></input>
+              </view>
+            </view>
+            <view class="input-item">
+              <text class="input-item-label">结束时间</text>
+              <view class="input-item-content">
+                <input type="time" placeholder="" bindinput="inputEndTime"></input>
+              </view>
+            </view>
+
+            <view class="input-item">
+              <picker mode="date" value="{{startDate}}" start="2015-09-01" end="2017-09-01" bindchange="inputStartTime">
+                <view class="picker">
+                  开始时间: {{startDate}}
+                </view>
+              </picker>
+            </view>
+
+            <view class="input-item">
+              <picker mode="date" value="{{endDate}}" start="2015-09-01" end="2017-09-01" bindchange="inputEndTime">
+                <view class="picker">
+                  开始时间: {{endDate}}
+                </view>
+              </picker>
+            </view>
+
+            <view class="input-item">
+              <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                <view class="picker">
+                  当前选择：{{array[index]}}
+                </view>
+              </picker>
+            </view>
+
+          </view>
+        </view>
+        <view class="group-header">容纳人数</view>
+        <view class="group-body">
+          <view class="filter-tags">
+            <text wx:for="{{filterdata.contain}}" wx:key="{{item.id}}" data-id="{{item.id}}" bindtap="chooseContain" class="{{filter.containid==item.id?'active':''}}">{{item.title}}</text>
+          </view>
+        </view>
+        <view class="group-header">提供设备</view>
+        <view class="group-body">
+          <view class="filter-tags">
+            <text wx:for="{{filterdata.equipments}}" data-id="{{item.id}}" wx:key="{{item.id}}" bindtap="chooseEquipment">{{item.title}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="filter-btns">
+        <button class="btn-block btn-gray" bindtap="cleanFilter">清空</button>
+        <button class="btn-block btn-orange" bindtap="submitFilter">提交</button>
+      </view>
+    </view>
+  </view>
+  <view class="filter-shadow" wx:if="{{showfilter}}" bindtap="hideFilter"></view>
+</view>
+<!-- 排序 筛选  end -->
+
+
+
+
+
+<!-- searchbar start -->
+<view class="search-bar">
+  <checkbox class="checkboxAll" value="0" bindtap="checkboxAll"></checkbox>
+  <!-- <icon class="weui-icon-search_in-box" type="search" size="14"></icon> -->
+  <input placeholder="请输入名称" bindchange="inputChange" />
+  <button type="primary" bindtap="queryUser">查询</button>
+</view>
+
+
+<!-- searchbar end -->
+
+
+<!-- 下面列表 -->
+<view class="container_list">
+  <scroll-view style='height:{{height}}px;' scroll-y='{{scrollY}}' class='msg-list' bindscroll='onScroll'>
+    <view wx:for="{{msgList}}" wx:key="id" class='msg-item' animation='{{item.wrapAnimation}}'>
+      <text class='msg-state'>状态</text>
+
+      <view id='{{item.id}}' class='msg' animation='{{item.animation}}' bindtouchstart='ontouchstart' bindtouchmove='ontouchmove' bindtouchend='ontouchend' bindlongpress="handleLongPress">
+        <view>
+          <checkbox value="{{item.carid}}" class="checkboxSingle" checked="{{checkboxSingle}}"></checkbox>
+        </view>
+        <view bindtap="handleClick">
+          <text class='user-name'>{{item.carid}}</text>
+          <text class='user-no'>账号：{{item.msgText}}</text>
+          <text class='msg-agent'>代理商：{{item.msgText}}</text>
+          <text class='msg-company'>集团：{{item.msgText}}</text>
+          <text class='msg-state'>状态</text>
+        </view>
+      </view>
+
+      <view class='msg-menu'>
+        <view id='{{item.id}}' class='menu-delete' bindtap='onDeleteMsgTap' bindlongtap='onDeleteMsgLongtap'>
+          删除
+        </view>
+        <view id='{{item.id}}' class='menu-mark' bindtap='onMarkMsgTap' bindlongtap='onMarkMsgLongtap'>
+          修改
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+<!--动作菜单 start  -->
+<action-sheet hidden="{{onOff}}">
+  <action-sheet-item class='item'>确定</action-sheet-item>
+  <action-sheet-cancel class='cancel' bindtap="cancelAction">取消</action-sheet-cancel>
+</action-sheet>
+<!--动作菜单 end  -->

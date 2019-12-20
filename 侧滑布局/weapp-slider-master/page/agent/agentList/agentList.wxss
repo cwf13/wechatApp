@@ -1,0 +1,567 @@
+.clear {
+  clear: both;
+  overflow: hidden;
+}
+
+.tabTit {
+  height: 90rpx;
+  line-height: 90rpx;
+  border-bottom: solid 1px #eee;
+  position: fixed;
+  top: 0;
+  width: 750rpx;
+  z-index: 15;
+  background: #fff;
+  font-size: 15px;
+  text-align: center;
+}
+
+.tabTit .active {
+  color: #e64340;
+  background: #fff;
+}
+
+.tabTit .active image {
+  transform: rotate(180deg);
+  background: none;
+}
+
+.tabTit image {
+  width: 26rpx;
+  height: 26rpx;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+.tabLayer {
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+  width: 750rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 90rpx;
+  z-index: 16;
+  background: #fff;
+  padding-bottom: 40rpx;
+  border-bottom: solid 1px #eee;
+  text-align: center;
+}
+
+.tabLayer text {
+  width: 210rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  float: left;
+  border: solid 1px #eee;
+  margin: 20rpx 0 0 26rpx;
+  font-size: 15px;
+}
+
+.tabLayer .active {
+  color: #e64340;
+  border-color: #e64340;
+}
+
+.flex1 {
+  flex: 1;
+  overflow: hidden;
+  display: block;
+}
+
+/*弹性盒模型*/
+
+.box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+navigator {
+  display: inline;
+}
+
+.list {
+  margin-top: 50px;
+}
+
+.list .list_item {
+  margin-top: 10px;
+  padding: 10px;
+  height: 100px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.list .list_item .img {
+  float: left;
+  width: 40%;
+  height: 100%;
+}
+
+.list .list_item .img image {
+  width: 100%;
+  height: 100%;
+}
+
+.list .list_item .info {
+  width: 59%;
+  float: right;
+  height: 100px;
+  position: relative;
+}
+
+.list .list_item .info .title {
+  color: #333;
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+.list .list_item .info .price {
+  color: #ff2727;
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.list .list_item .info .num {
+  position: absolute;
+  left: 0px;
+  bottom: 10px;
+  color: #747474;
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+/* pages/list/list.wxss */
+
+.container {
+  position: absolute;
+  padding: 0;
+  margin-top: 90rpx;
+}
+
+.xiangqing {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  border-top: 2rpx #dedede solid;
+  margin-top: 25rpx;
+  padding-top: 10rpx;
+}
+
+.xiangqing_img {
+  width: 40%;
+  padding: 25rpx;
+}
+
+.xiangqing_img image {
+  width: 100%;
+  height: 220rpx;
+}
+
+.xiangqing_info {
+  width: 50%;
+  padding-top: 25rpx;
+  padding-bottom: 25rpx;
+}
+
+.xiangqing_info .zi {
+  border: 2rpx #fa8d33 solid;
+  color: #fa8d33;
+  padding: 2rpx 10rpx;
+  font-size: 18rpx;
+  margin-right: 22rpx;
+  border-radius: 9rpx;
+}
+
+.xiangqing_info .title {
+  font-weight: 600;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  color: #404040;
+}
+
+.key {
+  margin: 15rpx 0;
+}
+
+.key text {
+  margin-right: 15rpx;
+  padding: 0 9rpx;
+}
+
+.key .text0 {
+  background: #ddf7ff;
+  color: #77b3e3;
+}
+
+.key .text1 {
+  background: #fff0df;
+  color: #edd590;
+}
+
+.key .text2 {
+  background: #bee2d4;
+  color: 71C7A5;
+}
+
+.key .text3 {
+  background: #daf3ff;
+  color: 97C2EA;
+}
+
+.house {
+  margin-top: 25rpx;
+  color: #a8a8a8;
+}
+
+.prix {
+  margin-top: 25rpx;
+}
+
+.prix .prix1 {
+  color: #fa7c15;
+  font-size: 35rpx;
+  font-weight: 600;
+  margin-right: 25rpx;
+}
+
+.container {
+  z-index: 1;
+  display: block;
+}
+
+.yongjin {
+  width: 100%;
+}
+
+.yongjin .yongjin_info {
+  background: #f6f6f6;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 15rpx;
+  padding-top: 17rpx;
+  padding-left: 17rpx;
+  overflow: hidden;
+}
+
+.yongjin .yongjin_info .yongjin_img {
+  width: 45rpx;
+  height: 45rpx;
+  float: left;
+}
+
+.yongjin .yongjin_info .yongjin_font {
+  padding-left: 17rpx;
+  float: left;
+  color: #f56d03;
+  font-size: 32rpx;
+}
+
+/* searchbar  start */
+
+.checkboxAll {
+  position: fixed;
+  top: 214rpx;
+  margin-left: 20rpx;
+}
+
+.search-bar {
+  z-index: 1;
+}
+
+.search-bar button {
+  height: 70rpx;
+  line-height: 70rpx;
+  width: 140rpx;
+  position: fixed;
+  top: 100rpx;
+  left: 585rpx;
+  font-size: 30rpx;
+  color: #fbf9fe;
+}
+
+.search-bar input {
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  width: 480rpx;
+  height: 70rpx;
+  margin-top: 20rpx;
+  /*text-indent: 70rpx;*/
+  margin-bottom: 15rpx;
+  position: fixed;
+  top: 80rpx;
+  left: 70rpx;
+  padding-left: 70rpx;
+}
+
+.weui-icon-search_in-box {
+  position: absolute;
+  top: 124rpx;
+  left: 80rpx;
+  z-index: 1;
+}
+
+/* searchbar  end */
+
+/* 列表  start */
+
+.container_list {
+  padding: 0;
+  margin-top: 180rpx;
+  /* position: fixed; */
+  z-index: 1;
+}
+
+.dish-item {
+  width: 100%;
+  padding: 16rpx 0;
+}
+
+.dish-item-wrp {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.dish-item-pic {
+  width: 158rpx;
+}
+
+.dish-item-pic image {
+  width: 160rpx;
+  height: 190rpx;
+  margin: 0 auto;
+  padding: 5px 4px 3px 2px;
+}
+
+.dish-item-info {
+  width: 800rpx;
+  padding-left: 16rpx;
+}
+
+.dish-item-name {
+  color: #454545;
+  font-size: 26rpx;
+}
+
+.dish-item-sales {
+  color: #ccc;
+  font-size: 20rpx;
+  line-height: 50rpx;
+}
+
+.dish-item-money {
+  color: #f50909;
+  font-size: 26rpx;
+}
+
+.dish-footer {
+  /*background: red;*/
+  height: 100rpx;
+}
+
+/*操作菜品数量*/
+
+.dish-item-count {
+  width: 220rpx;
+  display: flex;
+  font-size: 26rpx;
+  padding: 60rpx 0 0 10rpx;
+  flex-direction: column;
+}
+
+.dish-item-tab {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.dish-item-count-minus {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.dish-item-count-text {
+  color: #ccc;
+  font-size: 28rpx;
+  line-height: 60rpx;
+  text-align: center;
+}
+
+.dish-item-count-plus {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.company-item-button {
+  color: #ccc;
+  font-size: 20rpx;
+  line-height: 40rpx;
+  margin-bottom: 4rpx;
+}
+.checkboxSingle{
+  margin-left: 20rpx;
+}
+
+/* 列表  end */
+
+.filter-sort {
+  display: block;
+  background: #fff;
+}
+
+.filter-sort view {
+  flex: 1;
+  line-height: 80rpx;
+  text-indent: 60rpx;
+  max-height: 432rpx;
+  overflow-y: auto;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+
+.filter-sort view.active {
+  color: #f7982a;
+}
+
+.filter-multiple {
+  flex-direction: column;
+}
+
+.filter-multiple .group {
+  max-height: 700rpx;
+  overflow: auto;
+}
+
+.filter-tags {
+  padding: 20rpx;
+}
+
+.filter-tags text {
+  padding: 20rpx 26rpx;
+  border: 1rpx solid #ddd;
+  display: inline-block;
+  line-height: 1;
+  color: #666;
+  font-size: 28rpx;
+  border-radius: 4rpx;
+  margin: 10rpx;
+  white-space: nowrap;
+}
+
+.filter-tags text.active {
+  background: #f7982a;
+  color: #fff;
+  border-color: #f7982a;
+}
+
+.filter-btns {
+  display: flex;
+  padding: 20rpx;
+  border-top: 1rpx solid #ddd;
+  margin-top: -1rpx;
+}
+
+.filter-btns button {
+  margin: 0 10rpx;
+  line-height: 80rpx;
+}
+
+.conference-item {
+  padding: 20rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+
+.conference-item-img {
+  width: 100%;
+  height: 360rpx;
+  overflow: hidden;
+  position: relative;
+}
+
+.conference-item-img text {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #07b5e0;
+  color: #fff;
+  font-size: 32rpx;
+  padding: 6rpx 20rpx;
+}
+
+.conference-item-img image {
+  width: 100%;
+}
+
+.conference-item-title {
+  font-size: 38rpx;
+  color: #000;
+}
+
+.conference-item-info {
+  display: flex;
+}
+
+.conference-item-info text {
+  flex: 1;
+}
+
+.conference-item-tags:not(:empty) {
+  margin-top: 10rpx;
+}
+
+.conference-item-tags text {
+  padding: 6rpx 16rpx;
+  border: 1rpx solid #f7982a;
+  line-height: 1;
+  color: #f7982a;
+  font-size: 28rpx;
+  border-radius: 4rpx;
+  margin-right: 10rpx;
+  white-space: nowrap;
+}
+/* 底部按钮 start*/
+.msg-menu {
+  position: absolute;
+  width: 100%;
+  height: 250rpx;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.menu-add {
+  position: absolute;
+  width:150rpx;
+  height: 250rpx;
+  top: 1rpx;
+  right: 150rpx;
+  background-color: rgb(74, 138, 111);
+  color: #fff;
+  text-align: center;
+  line-height: 250rpx;
+}
+
+.menu-edit {
+  position: absolute;
+  width: 150rpx;
+  height: 250rpx;
+  top: 1rpx;
+  right: 300rpx;
+  background-color: rgb(200, 199, 205);
+  color: #fff;
+  text-align: center;
+  line-height: 250rpx;
+}
+.menu-view {
+  position: absolute;
+  width: 150rpx;
+  height: 250rpx;
+  top: 1rpx;
+  right: 0;
+  background-color: rgb(255, 58, 50);
+  color: #fff;
+  text-align: center;
+  line-height: 250rpx;
+}
+
+/* 底部按钮 end*/
